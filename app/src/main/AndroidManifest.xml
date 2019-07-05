@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.diagnosabanding">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_logo"
+            android:label="@string/app_name"
+            android:networkSecurityConfig="@xml/security_config"
+            android:roundIcon="@drawable/ic_logo"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity
+                android:theme="@style/AppThemeNoActionBar"
+                android:name=".diagnosis.historyDetail.HistoryDetail">
+        </activity>
+        <activity
+                android:name=".staticPage.About"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".diagnosis.detail.ResultDetail"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".diagnosis.history.History"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".diagnosis.result.Result"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".diagnosis.process.DiagnoseProcess"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".diagnosis.DataChild"
+                android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+                android:name=".SplashScreen"
+                android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

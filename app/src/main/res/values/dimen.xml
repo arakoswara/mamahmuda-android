@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="x_space">60sp</dimen>
+    <dimen name="mx_space">25sp</dimen>
+    <dimen name="m_space">20sp</dimen>
+    <dimen name="s_space">8sp</dimen>
+    <dimen name="text_size">13sp</dimen>
+    <dimen name="statusBarHeight">0dp</dimen>
+    <dimen name="statusBarElevation">0dp</dimen>
+</resources>

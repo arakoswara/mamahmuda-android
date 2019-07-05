@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_bottom_grey"
+        android:paddingTop="@dimen/m_space"
+        android:paddingBottom="@dimen/m_space">
+
+    <CheckBox android:id="@+id/checkbox_gejela"
+              android:textColor="@color/blue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="@color/blue"
+              tools:ignore="MissingConstraints"/>
+
+</android.support.constraint.ConstraintLayout>

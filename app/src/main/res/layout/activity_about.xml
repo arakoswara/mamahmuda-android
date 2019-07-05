@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".staticPage.About"
+        android:background="@color/blue_light">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include
+                layout="@layout/status_bar"></include>
+
+        <include
+                layout="@layout/toolbar"></include>
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:padding="@dimen/s_space"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:gravity="center"
+                              android:layout_marginBottom="@dimen/s_space">
+                    <ImageView
+                            android:src="@drawable/logo_umj"
+                            android:layout_width="@dimen/x_space"
+                            android:layout_height="@dimen/x_space"/>
+
+                </LinearLayout>
+
+                <TextView
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/m_space"
+                        android:text="Tugas Akhir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:text= "Aplikasi diagnosa banding pada penyakit yang umum terjadi padi balita berbasis android menggunakan metode bayesian network."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/s_space"/>
+
+                <TextView
+                        android:layout_marginBottom="@dimen/s_space"
+                        android:text="Tentang aplikasi"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:layout_marginBottom="@dimen/s_space"
+                        android:background="@drawable/white_background"
+                        android:padding="@dimen/s_space"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_gravity="top"
+                            android:padding="@dimen/s_space"
+                            android:src="@drawable/ic_logo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <LinearLayout
+                            android:layout_marginLeft="@dimen/s_space"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:textSize="@dimen/m_space"
+                                android:text="@string/app_name"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorAccent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="Aplikasi mamahmuda merupaka sebuah aplikasi yang dibangun untuk melakukan diagnosis terhadap penyakit yang umum terjadi pada balita, dengan gejala - gejala yg dipilih oleh pengguna sebagai parameter perhitungan.\nAplikasi mamahmuda dibangun menggunakan bahasa pemograman kotlin dan menggunakan lumen sebagai miroservice.\nAplikasi ini dibuat sebagai syarat lulus tugas akhir pada fakultas teknik informatika muhammadiyah jakarta."
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:layout_marginTop="@dimen/s_space"
+                                android:textSize="@dimen/text_size"
+                                android:text="Versi : 1.1.2"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                        android:layout_marginBottom="@dimen/s_space"
+                        android:text="Profil penulis"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:layout_marginBottom="@dimen/s_space"
+                        android:background="@drawable/white_background"
+                        android:padding="@dimen/s_space"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_gravity="top"
+                            android:padding="@dimen/s_space"
+                            android:src="@drawable/ic_doctor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <LinearLayout
+                            android:layout_marginLeft="@dimen/s_space"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:textSize="@dimen/m_space"
+                                android:text="@string/author"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorAccent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="2012470031"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="Fakultas Teknik Informatika UMJ"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:layout_marginTop="@dimen/s_space"
+                                android:textSize="@dimen/text_size"
+                                android:text="Instagram : https://www.instagram.com/ak_12v"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="Github : https://github.com/arakoswara"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="Apk aplikasi : "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:textSize="@dimen/text_size"
+                                android:text="Website : http://all-api.herokuapp.com/portofolio"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

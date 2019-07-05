@@ -1,0 +1,23 @@
+<resources>
+    <string name="author">Koswara</string>
+    <string name="app_name">mamahmuda</string>
+    <string name="hint_name">Nama anak</string>
+    <string name="hint_bb">Berat badan (kg)</string>
+    <string name="hint_tb">Tinggi badan (cm)</string>
+    <string name="hint_dob">Tanggal lahir</string>
+    <string name="txt_save">Simpan</string>
+    <string name="txt_next">Selanjutnya</string>
+    <string name="input_data_info">Membuat kartu pemeriksaan</string>
+    <string name="input_data_info2">masukkan data anak</string>
+    <string name="input_gejala_info">Silahkan pilih \n gejala - gejala yang sesuai yang dialami anak.</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="eq_dob">21/07/2018</string>
+    <string name="txt_detail">Lihat Detail</string>
+    <string name="eq_penyakit">80% - Diare, 50% Sakit Perut, 10% TBC</string>
+    <string name="history">Riwayat</string>
+    <string name="about">Tentang</string>
+    <string name="resutl">Hasil Pemeriksaan</string>
+    <string name="history_checkup">Riwayat Pemeriksaan</string>
+    <string name="errorNotFound">Data tidak ditemukan, periksan koneksi anda dan silahkan coba kembali.</string>story
+    <string name="history_detail">Detail Riwayat</string>
+</resources>
