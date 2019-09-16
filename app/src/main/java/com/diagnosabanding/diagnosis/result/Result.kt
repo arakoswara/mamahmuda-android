@@ -31,14 +31,13 @@ class Result : AppCompatActivity(), ResultView {
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
         actionBar?.setDisplayShowHomeEnabled(true)
-        actionBar?.setHomeAsUpIndicator(R.drawable.ic_clear)
+        actionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
 
         // get data from intent
         val childName = intent.getStringExtra("childName")
         val childDob = intent.getStringExtra("childDob")
         val diagnosisID = intent.getStringExtra("diagnosisId")
         val pasienID = intent.getStringExtra("pasienId")
-
         // get deviceID
         val deviceID = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
 

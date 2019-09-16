@@ -1,18 +1,18 @@
 package com.diagnosabanding.diagnosis.process
 
+import android.app.ProgressDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
 import android.support.v7.widget.LinearLayoutManager
-import android.telephony.TelephonyManager
 import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.ProgressBar
 import com.diagnosabanding.R
 import com.diagnosabanding.diagnosis.result.Result
-import com.diagnosabanding.model.DiagnoseResponse
+import com.diagnosabanding.model.DiagnoseField
 import com.diagnosabanding.model.GejalaField
 import com.diagnosabanding.repository.MyRepository
 import com.diagnosabanding.utils.invisible
@@ -25,7 +25,6 @@ import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.toast
 
 class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
-
     private var gejala: MutableList<GejalaField> = mutableListOf()
     private lateinit var processAdapter: ProcessAdapter
     private lateinit var presenter: ProcessPresenter
@@ -33,6 +32,7 @@ class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
     private lateinit var progressBar: ProgressBar
     private var menuItem: Menu? = null
     private var gejalaCodeList : MutableList<Int?> = mutableListOf()
+    private lateinit var dialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,11 +48,11 @@ class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
         presenter = ProcessPresenter(this, MyRepository)
         presenter.getGejala()
 
-        println("Test "+gejalaCodeList)
-
         paramList.layoutManager = LinearLayoutManager(this)
         processAdapter = ProcessAdapter(gejala) {
+            Log.d("GEJALA ID ", it.gejala_id.toString())
             gejalaCodeList.add(it.gejala_id)
+            Log.d("COUNT ", gejalaCodeList.size.toString())
         }
         paramList.adapter = processAdapter
 
@@ -60,13 +60,19 @@ class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
             presenter.getGejala()
         }
         shimmerLayout.startShimmerAnimation()
+        doProcess()
+    }
 
+    private fun doProcess()
+    {
         tvProcess.setOnClickListener {
             val childName = intent.getStringExtra("childName")
             val childDob = intent.getStringExtra("childDob")
             val deviceID = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+            dialog = ProgressDialog.show(this, "Sedang diproses...", "")
 
             if (gejalaCodeList.size.equals(0)) {
+                dialog.dismiss()
                 toast("Error. \nSilakan pilih gejala sesuai dengan yang diderita.")
             } else {
                 postProcessPresenter = PostProcessPresenter(this, MyRepository)
@@ -86,25 +92,25 @@ class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
         return super.onSupportNavigateUp()
     }
 
-    override fun onPostSuccess(data: DiagnoseResponse?) {
+    override fun onPostSuccess(data: List<DiagnoseField>) {
+        Log.d("SUKES ", "OKE")
+        Log.d("Riwayat ID ", data[0].riwayat_id.toString())
+        Log.d("Pasien ID ", data[0].pasien_id.toString())
+
         val childName = intent.getStringExtra("childName")
         val childDob = intent.getStringExtra("childDob")
-
-        if (data?.status.toString().equals("200")) {
-            startActivity<Result>(
-                "childName" to childName,
-                "childDob" to childDob,
-                "diagnosisId" to data?.data.toString(),
-                "pasienId" to "0"
-            )
-            finish()
-        } else {
-            toast("Error, Please try again.")
-        }
+        startActivity<Result>(
+            "childName" to childName,
+            "childDob" to childDob,
+            "diagnosisId" to data[0].riwayat_id.toString(),
+            "pasienId" to data[0].pasien_id.toString()
+        )
+        finish()
+        dialog.dismiss()
     }
 
     override fun onPostError() {
-        toast("Error. Please check your current connection.")
+        toast("Terjadi kesalahan silahkan coba lagi.")
     }
 
     override fun processSuccess(data: List<GejalaField>) {
@@ -122,7 +128,7 @@ class DiagnoseProcess : AppCompatActivity(), ProcessView, PostParamView {
     }
 
     override fun processError() {
-        toast("Data not found, please refresh page.")
+        toast("Data tidak ditemukan, refresh untuk memuat ulang.")
     }
 
     override fun showLoading() {

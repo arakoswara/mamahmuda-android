@@ -1,6 +1,5 @@
 package com.diagnosabanding.diagnosis.history
 
-import com.diagnosabanding.model.HistoryField
 import com.diagnosabanding.model.HistoryResponse
 import com.diagnosabanding.repository.MyRepository
 
@@ -8,7 +7,7 @@ class HistoryPresenter(private val view: HistoryView, private val myRepository: 
     fun getHistory(deviceID: String) {
         myRepository
             .getHistory(deviceID, object : HistoryCallback<HistoryResponse> {
-                override fun onSuccess(data: List<HistoryField>) {
+                override fun onSuccess(data: HistoryResponse) {
                     view.onSuccess(data)
                 }
 

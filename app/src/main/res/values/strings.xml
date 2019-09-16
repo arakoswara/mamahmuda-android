@@ -13,11 +13,12 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="eq_dob">21/07/2018</string>
     <string name="txt_detail">Lihat Detail</string>
+    <string name="txt_result">Lihat Hasil</string>
     <string name="eq_penyakit">80% - Diare, 50% Sakit Perut, 10% TBC</string>
-    <string name="history">Riwayat</string>
-    <string name="about">Tentang</string>
+    <string name="history">Riwayat Pemeriksaan</string>
+    <string name="about">Tentang Aplikasi</string>
     <string name="resutl">Hasil Pemeriksaan</string>
     <string name="history_checkup">Riwayat Pemeriksaan</string>
-    <string name="errorNotFound">Data tidak ditemukan, periksan koneksi anda dan silahkan coba kembali.</string>story
+    <string name="errorNotFound">Data riwayat tidak ditemukan.</string>
     <string name="history_detail">Detail Riwayat</string>
 </resources>

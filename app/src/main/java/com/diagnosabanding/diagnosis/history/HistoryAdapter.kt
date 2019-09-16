@@ -24,7 +24,7 @@ class HistoryAdapter(
     class HistoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bindItem(history: HistoryField, listener: (HistoryField) -> Unit) {
             itemView.name.text = history.name
-            itemView.dob.text = "${history.dob} (${history.age})"
+            itemView.dob.text = "Tanggal Lahir : ${history.dob}"
             itemView.createdAt.text = "Tanggal terdaftar : ${history.created_at}"
             itemView.setOnClickListener {
                 listener(history)

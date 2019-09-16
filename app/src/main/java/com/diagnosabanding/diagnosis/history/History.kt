@@ -10,6 +10,7 @@ import android.view.View
 import com.diagnosabanding.R
 import com.diagnosabanding.diagnosis.historyDetail.HistoryDetail
 import com.diagnosabanding.model.HistoryField
+import com.diagnosabanding.model.HistoryResponse
 import com.diagnosabanding.repository.MyRepository
 import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.loading_fb.*
@@ -53,16 +54,27 @@ class History : AppCompatActivity(), HistoryView{
         return super.onSupportNavigateUp()
     }
 
-    override fun onSuccess(data: List<HistoryField>) {
+    override fun onSuccess(data: HistoryResponse) {
         history.clear()
-        history.addAll(data)
+        history.addAll(data.data)
         historyAdapter.notifyDataSetChanged()
 
-        Handler().postDelayed( {
-            shimmerLayout.stopShimmerAnimation()
-            shimmerLayout.visibility = View.GONE
-            historyList.visibility = View.VISIBLE
-        },1000)
+        if (data.status?.equals(200)!!) {
+            Handler().postDelayed( {
+                shimmerLayout.stopShimmerAnimation()
+                shimmerLayout.visibility = View.GONE
+                historyList.visibility = View.VISIBLE
+            },1000)
+        }
+        else
+        {
+            Handler().postDelayed( {
+                shimmerLayout.stopShimmerAnimation()
+                shimmerLayout.visibility = View.GONE
+                errorNotFound.visibility = View.VISIBLE
+            },1000)
+        }
+
     }
 
     override fun onError() {

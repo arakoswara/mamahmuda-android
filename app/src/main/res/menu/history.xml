@@ -5,15 +5,15 @@
     <item
             android:id="@+id/history"
             android:icon="@drawable/ic_history"
-            android:title="info"
+            android:title="@string/history"
             android:iconifiedByDefault="false"
-            app:showAsAction="ifRoom"></item>
+            app:showAsAction="never"></item>
 
     <item
             android:id="@+id/info"
             android:icon="@drawable/ic_info"
-            android:title="info"
+            android:title="@string/about"
             android:iconifiedByDefault="false"
-            app:showAsAction="ifRoom"></item>
+            app:showAsAction="never"></item>
 
 </menu>

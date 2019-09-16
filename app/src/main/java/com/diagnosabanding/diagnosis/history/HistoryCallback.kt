@@ -1,8 +1,8 @@
 package com.diagnosabanding.diagnosis.history
 
-import com.diagnosabanding.model.HistoryField
+import com.diagnosabanding.model.HistoryResponse
 
 interface HistoryCallback<T> {
-    fun onSuccess(data: List<HistoryField>)
+    fun onSuccess(data: HistoryResponse)
     fun onError()
 }

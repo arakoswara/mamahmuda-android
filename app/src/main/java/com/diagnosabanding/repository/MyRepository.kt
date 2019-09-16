@@ -1,5 +1,6 @@
 package com.diagnosabanding.repository
 
+import android.util.Log
 import com.diagnosabanding.api.MamahMudaApi
 import com.diagnosabanding.diagnosis.history.HistoryCallback
 import com.diagnosabanding.diagnosis.historyDetail.HistoryDetailCallback
@@ -29,7 +30,7 @@ object MyRepository {
             })
     }
 
-    fun postGejala(paramPost: MutableList<Int?>, paramName: String, paramDob: String, deviceID: String, callback: PostParamCallback) {
+    fun postGejala(paramPost: MutableList<Int?>, paramName: String, paramDob: String, deviceID: String, callback: PostParamCallback<DiagnoseResponse>) {
         RetrofitHelper
             .createService(MamahMudaApi::class.java)
             .postGejala("process", paramPost, paramName, paramDob, deviceID)
@@ -39,7 +40,8 @@ object MyRepository {
                 }
 
                 override fun onResponse(call: Call<DiagnoseResponse>, response: Response<DiagnoseResponse>) {
-                    callback.onPostSuccess(response.body())
+                    response.body()?.data?.let { callback.onPostSuccess(it) }
+                    Log.d("Proses myRepository ", response.message())
                 }
 
             })
@@ -71,7 +73,7 @@ object MyRepository {
                 }
 
                 override fun onResponse(call: Call<HistoryResponse>, response: Response<HistoryResponse>) {
-                    response.body()?.data?.let { callback.onSuccess(it) }
+                    response.body()?.let { callback.onSuccess(it) }
                 }
 
             })

@@ -132,9 +132,6 @@ class DataChild : AppCompatActivity(), AutocompletePolicy {
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH))
-
-                date.datePicker.maxDate = calendar.timeInMillis
-                date.datePicker.minDate = calendar.timeInMillis - (1000 * 60 * 60 * 24)
                 date.show()
             }
 

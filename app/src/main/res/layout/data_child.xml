@@ -108,8 +108,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/x_space"
                             android:layout_marginBottom="@dimen/s_space"/>
-
-
                     <Button
                             android:id="@+id/btnSave"
                             android:textColor="@color/white"
@@ -118,8 +116,6 @@
                             android:background="@drawable/blue_background"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
-
-
                 </LinearLayout>
             </ScrollView>
         </android.support.constraint.ConstraintLayout>

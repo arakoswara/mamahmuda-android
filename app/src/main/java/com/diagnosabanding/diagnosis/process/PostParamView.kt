@@ -1,5 +1,7 @@
 package com.diagnosabanding.diagnosis.process
 
-interface PostParamView: PostParamCallback {
+import com.diagnosabanding.model.DiagnoseField
+
+interface PostParamView: PostParamCallback<DiagnoseField> {
 
 }

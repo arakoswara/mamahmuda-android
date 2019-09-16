@@ -18,7 +18,8 @@ object RetrofitHelper {
     fun initRetrofit() : Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://all-api.herokuapp.com/public/diagnosis/")
+//            .baseUrl("https://all-api.herokuapp.com/public/diagnosis/")
+            .baseUrl("http://192.168.0.103:8000/diagnosis/")
             .client(client)
             .build()
     }

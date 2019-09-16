@@ -1,8 +1,8 @@
 package com.diagnosabanding.diagnosis.process
 
-import com.diagnosabanding.model.DiagnoseResponse
+import com.diagnosabanding.model.DiagnoseField
 
-interface PostParamCallback {
-    fun onPostSuccess(data: DiagnoseResponse?)
+interface PostParamCallback<T> {
+    fun onPostSuccess(data: List<DiagnoseField>)
     fun onPostError()
 }
